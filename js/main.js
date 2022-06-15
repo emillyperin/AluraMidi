@@ -3,19 +3,14 @@ function tocaSom(idElementAudio){
 };
 
 const listaTeclas = document.querySelectorAll('.tecla');
-let contador = 0;
 
-//enquanto o contador for menor que 9, que é a quantidade de teclas, ele executará o código, sempre adicionando +1 ao número do contador
-while (contador < listaTeclas.length) {
-
+// for: cria a variavel contador, enquanto o nºdo contador for menor que a lista, ele add +1 ao contador
+for (let contador = 0; contador < listaTeclas.length; contador++) {
     const tecla = listaTeclas[contador];
     const instrumento = tecla.classList[1]; //final da classe, que é igual aos IDs dos áudios
-
-    //template string -> precisa ser com crase
-    const idAudio = `#som_${instrumento}`; //início do id dos audios e personaliza conforme o final da classe de cada elemento
+    const idAudio = `#som_${instrumento}`; //template string
 
     tecla.onclick = function(){
         tocaSom(idAudio);
-    };
-    contador++;
-}; 
+    }
+} 
